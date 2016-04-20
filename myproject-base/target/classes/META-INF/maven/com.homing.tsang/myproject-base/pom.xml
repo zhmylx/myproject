@@ -7,4 +7,11 @@
   </parent>
   <artifactId>myproject-base</artifactId>
   <build/>
+  <dependencies>
+		<dependency>
+			<groupId>com.homing.tsang</groupId>
+			<artifactId>myproject-utils</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+  </dependencies>
 </project>
