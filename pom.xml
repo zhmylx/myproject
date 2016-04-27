@@ -47,6 +47,8 @@
   	<module>myproject-base</module>
   	<module>myproject-web</module>
   	<module>myproject-poi</module>
+  	<module>ins</module>
+  	<module>dqdLib</module>
   </modules>
   
   <developers>
@@ -267,6 +269,13 @@
 			<artifactId>spring-orm</artifactId>
 			<version>${spring_version}</version>
 		</dependency>
+
+		 <dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-test</artifactId>
+				<version>${spring_version}</version>
+				<scope>test</scope>
+			</dependency> 
 		<dependency>
 				<groupId>org.aspectj</groupId>
 				<artifactId>aspectjrt</artifactId>
@@ -290,6 +299,17 @@
 				<artifactId>spring-data-jpa</artifactId>
 				<version>${spring_data_version}</version>
         	</dependency>
+        	
+         <dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context-support</artifactId>
+			<version>${spring_version}</version>
+		</dependency>
+		<dependency> 
+		 <groupId>org.springframework</groupId>
+		 <artifactId>spring-webmvc</artifactId>
+		<version>${spring_version}</version>
+		</dependency>
 		
 		<!-- optional datasource pool -->
 			<dependency>
@@ -360,6 +380,12 @@
 						<artifactId>commons-logging</artifactId>
 					</exclusion>
 				</exclusions>
+			</dependency>
+			
+			<dependency> 
+			  <groupId>commons-configuration</groupId>
+			   <artifactId>commons-configuration</artifactId>
+			    <version>1.8</version> 
 			</dependency>
 			<dependency>
 				<groupId>commons-codec</groupId>

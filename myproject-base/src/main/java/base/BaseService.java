@@ -6,6 +6,8 @@ import org.apache.log4j.Logger;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
+import base.dao.BaseDao;
+
 /**
  * 
  * @author Homing Tsang
