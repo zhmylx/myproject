@@ -1,28 +1,9 @@
-/**   
- * 文件名：PropertiesUtil.java   
- *    
- * 日期：2013-10-25   
- * 
- * Copyright (c) 广州闪购软件服务有限公司-版权所有     
- */
+
 package utils;
 
 import java.io.InputStream;
 import java.util.Properties;
 
-/**
- * 项目名称：shopsSystem
- * 
- * 类名称：PropertiesUtil
- * 
- * 类描述： 资源操作类
- * 
- * 创建人： zhou'sheng
- * 
- * 创建时间：2013-10-25 下午2:59:58
- * 
- * Copyright (c) 广州闪购软件服务有限公司-版权所有
- */
 public class PropertiesUtil {
 	
 	/** 

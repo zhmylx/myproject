@@ -5,6 +5,11 @@ import java.util.regex.Pattern;
 
 public class MySql5PageHepler {
 	
+	/**
+	 * 根据 查询sql 得到 查询总数的sql
+	 * @param querySelect
+	 * @return
+	 */
 	public static String getCountString(String querySelect) {
 		querySelect = getLineSql(querySelect);
 		int orderIndex = getLastOrderInsertPoint(querySelect);
@@ -22,12 +27,13 @@ public class MySql5PageHepler {
 				+ querySelect.substring(formIndex, orderIndex);
 	}
 
+	
 	private static int getLastOrderInsertPoint(String querySelect) {
 		int orderIndex = querySelect.toLowerCase().lastIndexOf("order by");
 		if ((orderIndex == -1)
 				|| (!(isBracketCanPartnership(querySelect.substring(orderIndex,
 						querySelect.length()))))) {
-			throw new RuntimeException("My SQL 分页必须要有Order by 语句!");
+			throw new RuntimeException("MySQL 分页必须要有Order by 语句!");
 		}
 		return orderIndex;
 	}

@@ -21,20 +21,38 @@ import base.dao.mybatis.dialect.OracleDialect;
 import base.entity.QueryCondition;
 
 
+/**
+ * 拦截 mybatis 实现物理分页
+ * 
+ * 需要在 configuratiom.xml 中配置
+ * <configuration>
+	<properties>
+		<property name="dialect" value="Oracle"/>
+	</properties>
+	<plugins>
+		<plugin interceptor="com.cpersicum.modules.orm.mybatis.PaginationInterceptor">
+		</plugin>
+	</plugins>
+</configuration>
+
+ * @author Homing tsang
+ *
+ */
 @Intercepts({ @org.apache.ibatis.plugin.Signature(type = StatementHandler.class, method = "prepare", args = { java.sql.Connection.class }) })
 public class PaginationInterceptor implements Interceptor {
 	private static final Log log = LogFactory
 			.getLog(PaginationInterceptor.class);
 
 	public Object intercept(Invocation invocation) throws Throwable {
+		//得到参数
 		StatementHandler statementHandler = (StatementHandler) invocation
 				.getTarget();
 		ParameterHandler parameterHandler = statementHandler
 				.getParameterHandler();
 		Object parameter = parameterHandler.getParameterObject();
 
-		if (parameter instanceof QueryCondition) {
-
+		if (parameter instanceof QueryCondition) {//判断参数是否为查询
+            //得到分页信息
 			BoundSql boundSql = statementHandler.getBoundSql();
 			MetaObject metaStatementHandler = MetaObject
 					.forObject(statementHandler);

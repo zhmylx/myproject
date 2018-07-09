@@ -357,6 +357,11 @@ public class StringUtil {
 		return true;
 	}
 
+	/**
+	 * 检查是否email格式
+	 * @param email
+	 * @return
+	 */
 	public static boolean checkEmail(String email) {
 		if (!isNotNull(email)) {
 			return false;
@@ -368,6 +373,12 @@ public class StringUtil {
 		return matcher.find();
 	}
 
+	/**
+	 * 分割
+	 * @param str
+	 * @param seperators
+	 * @return
+	 */
 	public static String[] split(String str, String seperators) {
 		StringTokenizer tokenlizer = new StringTokenizer(str, seperators);
 		List result = new ArrayList();

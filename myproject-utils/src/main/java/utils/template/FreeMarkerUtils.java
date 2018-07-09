@@ -16,7 +16,7 @@ public class FreeMarkerUtils {
 	public static void main(String[] args) {
 		String test = "name=${name}";
 		Map model = new HashMap();
-		model.put("name", "李道刚");
+		model.put("name", "张三");
 		System.out.println(rendereString(test, model));
 	}
 
